@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yt-dlp-gui"
+version = "2026.05.29.1"
+description = "Advanced tkinter graphical user interface for yt-dlp"
+readme = "README.md"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "yt-dlp>=2025.0.0",
+]
+
+[project.scripts]
+yt-dlp-gui = "yt_dlp_gui.main:main"
+
+# Explicitly mapping the directory layout fixes MacPorts discovery bugs
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["yt_dlp_gui"]
